@@ -10,13 +10,13 @@ var helloCommand *cobra.Command
 
 func init() {
 	helloCommand = &cobra.Command{
-		Use:   "hello",
+		Use:   "cli-cobra",
 		Short: "Print hello world",
 		Run:   sayHello,
 	}
-	helloCommand.Flags().StringP("name", "n", "World", "Who to say hello to.")
+	helloCommand.Flags().StringP("name", "n", "World", "要跟誰說 hello。")
 	helloCommand.MarkFlagRequired("name")
-	helloCommand.Flags().StringP("language", "l", "en", "Which language to say hello in.")
+	helloCommand.Flags().StringP("language", "l", "en", "用哪一種語言說 hello。")
 }
 
 func sayHello(cmd *cobra.Command, args []string) {
@@ -30,8 +30,8 @@ func sayHello(cmd *cobra.Command, args []string) {
 		greeting = "Hola"
 	case "fr":
 		greeting = "Bonjour"
-	case "de":
-		greeting = "Hallo"
+	case "zh":
+		greeting = "哈囉"
 	}
 	fmt.Printf("%s %s!\n", greeting, name)
 }

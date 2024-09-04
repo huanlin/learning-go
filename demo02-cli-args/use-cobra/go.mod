@@ -1,4 +1,4 @@
-module github.com/huanlin/godemo/demo-cli-cobra
+module github.com/huanlin/learning-go/cli-cobra
 
 go 1.23.0
 
